@@ -3,9 +3,12 @@
 // 
 // Copyright (c) 2021 Ubisoft. All rights reserved.
 
+using System;
 using System.Collections.Generic;
+using Ubisoft.UIProgrammerTest.ViewModels;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityMVVM.Util;
 
 namespace Ubisoft.UIProgrammerTest.Sample
 {
@@ -75,8 +78,12 @@ namespace Ubisoft.UIProgrammerTest.Sample
 			m_activePacksText.text = str;
 
 			// Currency counters
-			m_coinsText.text = LocalizationManager.instance.Localize("TID_COINS_NAME") + ": " + UserProfile.instance.GetCurrency(UserProfile.Currency.Coins).ToString();
-			m_gemsText.text = LocalizationManager.instance.Localize("TID_GEMS_NAME") + ": " + UserProfile.instance.GetCurrency(UserProfile.Currency.Gems).ToString();
+			//m_coinsText.text = LocalizationManager.instance.Localize("TID_COINS_NAME") + ": " + UserProfile.instance.GetCurrency(UserProfile.Currency.Coins).ToString();
+			//m_gemsText.text = LocalizationManager.instance.Localize("TID_GEMS_NAME") + ": " + UserProfile.instance.GetCurrency(UserProfile.Currency.Gems).ToString();
+
+			CurenciesViewModel curenciesViewModel = ViewModelProvider.Instance.GetViewModelInstance<CurenciesViewModel>();
+			curenciesViewModel.coins = 9000; // Convert.ToInt32(UserProfile.instance.GetCurrency(UserProfile.Currency.Coins));
+			curenciesViewModel.gems = 400; //Convert.ToInt32(UserProfile.instance.GetCurrency(UserProfile.Currency.Gems));
 		}
 
 		/// <summary>
@@ -147,7 +154,7 @@ namespace Ubisoft.UIProgrammerTest.Sample
 			List<ShopPack> pool = ShopManager.instance.activePacks;
 			if (pool.Count > 0)
 			{
-				ShopPack targetPack = pool[Random.Range(0, pool.Count)];
+				ShopPack targetPack = pool[UnityEngine.Random.Range(0, pool.Count)];
 				BuyPack(targetPack);
 			}
 		}
@@ -171,7 +178,7 @@ namespace Ubisoft.UIProgrammerTest.Sample
 			// Select a random one
 			if (pool.Count > 0)
 			{
-				ShopPack targetPack = pool[Random.Range(0, pool.Count)];
+				ShopPack targetPack = pool[UnityEngine.Random.Range(0, pool.Count)];
 				BuyPack(targetPack);
 			}
 		}
@@ -195,7 +202,7 @@ namespace Ubisoft.UIProgrammerTest.Sample
 			// Select a random one
 			if (pool.Count > 0)
 			{
-				ShopPack targetPack = pool[Random.Range(0, pool.Count)];
+				ShopPack targetPack = pool[UnityEngine.Random.Range(0, pool.Count)];
 				BuyPack(targetPack);
 			}
 		}
@@ -219,7 +226,7 @@ namespace Ubisoft.UIProgrammerTest.Sample
 			// Select a random one
 			if (pool.Count > 0)
 			{
-				ShopPack targetPack = pool[Random.Range(0, pool.Count)];
+				ShopPack targetPack = pool[UnityEngine.Random.Range(0, pool.Count)];
 				BuyPack(targetPack);
 			}
 		}
@@ -230,7 +237,7 @@ namespace Ubisoft.UIProgrammerTest.Sample
 		public void OnChangeLanguageRandom()
 		{
 			// Select a random language from the available ones in the localization manager
-			LocalizationManager.Language newLang = (LocalizationManager.Language)Random.Range(0, (int)LocalizationManager.Language.Count);
+			LocalizationManager.Language newLang = (LocalizationManager.Language)UnityEngine.Random.Range(0, (int)LocalizationManager.Language.Count);
 
 			// Apply new language!
 			LocalizationManager.instance.SetLanguage(newLang);

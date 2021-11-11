@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5667231374603312474}
   - component: {fileID: 7812103261439420688}
   - component: {fileID: 2845084299587542037}
+  - component: {fileID: 4341481047324061130}
+  - component: {fileID: 6768781083244643146}
   m_Layer: 5
   m_Name: CoinsText
   m_TagString: Untagged
@@ -79,6 +81,39 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Coins: 5000000000'
+--- !u!114 &4341481047324061130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3515427340460726426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6254f6ce704a4a448c7af06a9bf9d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ViewModelName: Ubisoft.UIProgrammerTest.ViewModels.CurenciesViewModel
+  BindingMode: 0
+  SrcPropertyName: coins
+  DstPropertyName: text
+  SrcPropertyPath: 
+  DstPropertyPath: 
+  DstView: {fileID: 2845084299587542037}
+  Converter: {fileID: 6768781083244643146}
+  DstChangedEventName: onCullStateChanged
+--- !u!114 &6768781083244643146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3515427340460726426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a68451e6c0eec4e890c5f4abaccc5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5094171821684726619
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +200,8 @@ GameObject:
   - component: {fileID: 3693775665274853154}
   - component: {fileID: 8777850676948698721}
   - component: {fileID: 979369487499990974}
+  - component: {fileID: 3823895429003377392}
+  - component: {fileID: 7287086059239809554}
   m_Layer: 5
   m_Name: GemsText
   m_TagString: Untagged
@@ -233,6 +270,39 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Gems: 5000000000'
+--- !u!114 &3823895429003377392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5543339782572264513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6254f6ce704a4a448c7af06a9bf9d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ViewModelName: Ubisoft.UIProgrammerTest.ViewModels.CurenciesViewModel
+  BindingMode: 0
+  SrcPropertyName: gems
+  DstPropertyName: text
+  SrcPropertyPath: 
+  DstPropertyPath: 
+  DstView: {fileID: 979369487499990974}
+  Converter: {fileID: 7287086059239809554}
+  DstChangedEventName: onCullStateChanged
+--- !u!114 &7287086059239809554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5543339782572264513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a68451e6c0eec4e890c5f4abaccc5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6358409201534336881
 GameObject:
   m_ObjectHideFlags: 0
