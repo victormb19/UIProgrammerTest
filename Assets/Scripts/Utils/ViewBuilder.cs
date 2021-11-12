@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace Ubisoft.UIProgrammerTest
 {
-    [CreateAssetMenu(fileName = "ViewBuilder", menuName = "Configuration/ViewBuilder", order = 1)]
     public class ViewBuilder : ScriptableObject
     {
         [SerializeField]
@@ -12,7 +11,6 @@ namespace Ubisoft.UIProgrammerTest
         {
 
         }
-
 
     }
 }
