@@ -1,4 +1,4 @@
-﻿namespace Ubisoft.UIProgrammerTest.Models.Shop
+﻿namespace Ubisoft.UIProgrammerTest.Models.Shops
 {
     public enum ShopPackState
     {

@@ -4,6 +4,8 @@ namespace Ubisoft.UIProgrammerTest.ViewModels
 {
     public class CurenciesViewModel : ViewModelBase
     {
+        private UserProfile m_userProfile;
+
         private int m_coins;
         private int m_gems;
 
@@ -33,6 +35,9 @@ namespace Ubisoft.UIProgrammerTest.ViewModels
             }
         }
 
-
+        public void SetData(UserProfile userProfile)
+        {
+            m_userProfile = userProfile;
+        }
     }
 }

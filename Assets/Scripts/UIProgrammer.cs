@@ -9,7 +9,7 @@ namespace Ubisoft.UIProgrammerTest
 
         private void Awake()
         {
-
+            new Initializer();
         }
     }
 }

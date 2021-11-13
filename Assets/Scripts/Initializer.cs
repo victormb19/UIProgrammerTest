@@ -1,4 +1,6 @@
-﻿using Ubisoft.UIProgrammerTest.Models.Shop;
+﻿using Ubisoft.UIProgrammerTest.Models.Shops;
+using Ubisoft.UIProgrammerTest.ViewModels;
+using UnityMVVM.Util;
 
 namespace Ubisoft.UIProgrammerTest
 {
@@ -7,8 +9,10 @@ namespace Ubisoft.UIProgrammerTest
         public Initializer()
         {
             UserProfile userProfile = new UserProfile();
-            ShopPackBuilder shopPackBuilder = new ShopPackBuilder();
-            ShopPack shopPack = shopPackBuilder.Build();
+			Shop shop = new Shop();
+
+            MainStoreViewModel mainStoreViewModel = ViewModelProvider.Instance.GetViewModelInstance<MainStoreViewModel>();
+            mainStoreViewModel.SetData(userProfile, shop);
         }
-    }
+	}
 }
