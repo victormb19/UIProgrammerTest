@@ -1,4 +1,5 @@
 ﻿using Ubisoft.UIProgrammerTest.Models.Shops;
+using Ubisoft.UIProgrammerTest.ViewModels.Commands;
 using UnityMVVM.ViewModel;
 
 namespace Ubisoft.UIProgrammerTest.ViewModels
@@ -12,6 +13,11 @@ namespace Ubisoft.UIProgrammerTest.ViewModels
         {
             m_userProfile = userProfile;
             m_shop = shop;
+        }
+
+        public void InitTransaction( )
+        {
+          //  InitTransationCommand initTransationCommand = new InitTransationCommand(new Transaction(userProfile, new PackItem()));
         }
     }
 }

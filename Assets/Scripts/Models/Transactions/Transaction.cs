@@ -1,15 +1,22 @@
-﻿namespace Ubisoft.UIProgrammerTest.Models
-{
-    public struct Transaction
-    {
-        //private Currency m_currency;
-        //private int m_amount;
+﻿using Ubisoft.UIProgrammerTest.Models.Shops;
 
-        //public Transaction(Currency currency, int amount)
-        //{
-        //    m_currency = currency;
-        //    m_amount = amount;
-        //}
+namespace Ubisoft.UIProgrammerTest.Models.Transactions
+{
+    public class Transaction
+    {
+        private UserProfile m_userProfile;
+        private PackItem m_packItem;
+
+        public Transaction(UserProfile userProfile, PackItem packItem)
+        {
+            m_userProfile = userProfile;
+            m_packItem = packItem;
+        }
+
+        public void Execute()
+        {
+
+        }
 
     }
 }
