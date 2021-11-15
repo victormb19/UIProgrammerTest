@@ -1,4 +1,7 @@
-﻿namespace Ubisoft.UIProgrammerTest.ViewModels.Commands
+﻿
+using Ubisoft.UIProgrammerTest.Models.Transactions;
+
+namespace Ubisoft.UIProgrammerTest.ViewModels.Commands
 {
     public class ConfirmTransactionCommand : Command
     {

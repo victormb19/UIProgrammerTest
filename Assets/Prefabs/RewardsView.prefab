@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 6145412531786430780}
   - component: {fileID: 7077677360325742459}
   m_Layer: 5
-  m_Name: RewardsScreen
+  m_Name: RewardsView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

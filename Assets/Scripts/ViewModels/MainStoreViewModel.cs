@@ -1,5 +1,5 @@
-﻿using Ubisoft.UIProgrammerTest.Models.Shops;
-using Ubisoft.UIProgrammerTest.ViewModels.Commands;
+﻿using Ubisoft.UIProgrammerTest.Models;
+using Ubisoft.UIProgrammerTest.Models.Shops;
 using UnityMVVM.ViewModel;
 
 namespace Ubisoft.UIProgrammerTest.ViewModels

@@ -77,11 +77,11 @@ namespace Ubisoft.UIProgrammerTest.Models.Shops
 			// Items
 			if (m_data.HasKey("items"))
 			{
-				SimpleJSON.JSONArray itemsData = m_data["items"].AsArray;
+				JSONArray itemsData = m_data["items"].AsArray;
 				m_shopPackData.items = new ShopItemData[itemsData.Count];
 				for (int i = 0; i < itemsData.Count; ++i)
 				{
-					m_shopPackData.items[i] = ShopItemData.CreateFromJson(itemsData[i]);
+	//				m_shopPackData.items[i] = ShopItemData.CreateFromJson(itemsData[i]);
 				}
 			}
 

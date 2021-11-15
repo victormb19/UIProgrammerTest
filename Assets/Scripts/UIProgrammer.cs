@@ -1,15 +1,26 @@
 using UnityEngine;
+using Ubisoft.UIProgrammerTest.Models;
+using Ubisoft.UIProgrammerTest.Models.Shops;
+using Ubisoft.UIProgrammerTest.ViewModels;
+using UnityMVVM.Util;
 
 namespace Ubisoft.UIProgrammerTest
 {
     public class UIProgrammer : MonoBehaviour
     {
-        [SerializeField]
-        private ViewBuilder m_viewBuilder;
-
         private void Awake()
         {
-            new Initializer();
+            UserProfile userProfile = new UserProfile();
+            Shop shop = new Shop();
+
+            MainStoreViewModel mainStoreViewModel = ViewModelProvider.Instance.GetViewModelInstance<MainStoreViewModel>();
+            mainStoreViewModel.SetData(userProfile, shop);
+
+            MegaPackViewModel megaPackViewModel = ViewModelProvider.Instance.GetViewModelInstance<MegaPackViewModel>();
+            megaPackViewModel.SetData(userProfile, shop);
+
+            ConfirmViewModel confirmViewModel = ViewModelProvider.Instance.GetViewModelInstance<ConfirmViewModel>();
+            confirmViewModel.Initialize();
         }
     }
 }

@@ -63,7 +63,7 @@ namespace Ubisoft.UIProgrammerTest.Models.Shops
 			// Apply rewards!
 			for (int i = 0; i < m_data.items.Length; ++i)
 			{
-				m_data.items[i].Apply();
+				//m_data.items[i].Apply();
 			}
 
 			// If offer pack, mark it as expired so the pack is removed from the manager

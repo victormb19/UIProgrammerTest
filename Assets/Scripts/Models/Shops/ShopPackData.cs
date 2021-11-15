@@ -84,7 +84,6 @@ namespace Ubisoft.UIProgrammerTest.Models.Shops
 			set { m_discount = value; }
 		}
 
-		// Items
 		public ShopItemData[] items
 		{
 			get { return m_items; }

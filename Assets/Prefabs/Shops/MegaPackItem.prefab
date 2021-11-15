@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2913373526393614200}
   - component: {fileID: 3832889816329795768}
   - component: {fileID: 504614107720430826}
+  - component: {fileID: 5985709892196054392}
   m_Layer: 5
   m_Name: PackItemText
   m_TagString: Untagged
@@ -79,6 +80,25 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Hodur
+--- !u!114 &5985709892196054392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724889078734819789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f7b84aeead54a42b13d40839c1b658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _srcProp: itemName
+  _srcPath: 
+  _dstPath: 
+  _dstProp: text
+  _dstView: {fileID: 504614107720430826}
+  _converter: {fileID: 0}
+  SrcViewName: 
 --- !u!1 &4747720443566252480
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5850074412832446857}
   - component: {fileID: 2879610347795532051}
+  - component: {fileID: 3875118687374190820}
   m_Layer: 5
   m_Name: MegaPackItem
   m_TagString: Untagged
@@ -218,6 +239,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &3875118687374190820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5940652740324934207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150451b3ff1e5914393545d41b7dfe2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6148353095582235801
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +326,8 @@ GameObject:
   - component: {fileID: 5383411825599893295}
   - component: {fileID: 6689356191845116244}
   - component: {fileID: 6486648205226250432}
+  - component: {fileID: 3911581901371167630}
+  - component: {fileID: 2212019342667069445}
   m_Layer: 5
   m_Name: PackItemImage
   m_TagString: Untagged
@@ -357,3 +392,34 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3911581901371167630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8630472148510699159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f7b84aeead54a42b13d40839c1b658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _srcProp: itemImage
+  _srcPath: 
+  _dstPath: 
+  _dstProp: sprite
+  _dstView: {fileID: 6486648205226250432}
+  _converter: {fileID: 2212019342667069445}
+  SrcViewName: 
+--- !u!114 &2212019342667069445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8630472148510699159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad78978dbdb50a429ea7ce17ceff8af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
