@@ -15,7 +15,7 @@ namespace Ubisoft.UIProgrammerTest.ViewModels
             m_shop = shop;
         }
 
-        public void InitTransaction( )
+        public void InitTransaction()
         {
           //  InitTransationCommand initTransationCommand = new InitTransationCommand(new Transaction(userProfile, new PackItem()));
         }

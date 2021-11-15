@@ -2,7 +2,7 @@
 
 namespace Ubisoft.UIProgrammerTest.Models.Transactions
 {
-    public class Transaction
+    public class Transaction : TransactionSubject
     {
         private UserProfile m_userProfile;
         private PackItem m_packItem;

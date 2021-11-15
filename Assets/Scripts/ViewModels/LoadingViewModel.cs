@@ -19,6 +19,11 @@ namespace Ubisoft.UIProgrammerTest.ViewModels
             }
         }
 
+        public void Initialize()
+        {
+            Deactive();
+        }
+
         public void Active()
         {
             isVisible = true;

@@ -686,6 +686,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoneyOfferButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4147223455531530140, guid: 20beb222f1d59904791e1d137cfb6fbd, type: 3}
+      propertyPath: ViewModelName
+      value: Ubisoft.UIProgrammerTest.ViewModels.MegaPackViewModel
+      objectReference: {fileID: 0}
     - target: {fileID: 4228486667729343352, guid: 20beb222f1d59904791e1d137cfb6fbd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

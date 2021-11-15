@@ -21,6 +21,9 @@ namespace Ubisoft.UIProgrammerTest
 
             ConfirmViewModel confirmViewModel = ViewModelProvider.Instance.GetViewModelInstance<ConfirmViewModel>();
             confirmViewModel.Initialize();
+
+            LoadingViewModel loadingViewModel = ViewModelProvider.Instance.GetViewModelInstance<LoadingViewModel>();
+            loadingViewModel.Initialize();
         }
     }
 }

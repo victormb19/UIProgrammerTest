@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEditor;
 using UnityEngine;
 using UnityMVVM.Binding.Converters;
 
@@ -9,7 +8,7 @@ namespace Ubisoft.UIProgrammerTest.MVMConverters
     {
         public override object Convert(object value, Type targetType, object parameter)
         {
-            return AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Art/UI/ShopItems/Icons/" + value.ToString() + ".png");
+            return Resources.Load<Sprite>("UI/ShopItems/Icons/" + value.ToString());
         }
 
         public override object ConvertBack(object value, Type targetType, object parameter)
