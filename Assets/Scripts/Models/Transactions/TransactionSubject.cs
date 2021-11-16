@@ -1,4 +1,6 @@
-﻿namespace Ubisoft.UIProgrammerTest.Models.Transactions
+﻿using Ubisoft.UIProgrammerTest.Models.Errors;
+
+namespace Ubisoft.UIProgrammerTest.Models.Transactions
 {
     public class TransactionSubject
     {
@@ -19,9 +21,9 @@
 			m_observer.ConfirmReward();
         }
 
-		public void Error()
+		public void Error(ErrorReport errorReport)
 		{
-			m_observer.Error();
+			m_observer.Error(errorReport);
 		}
 	}
 }

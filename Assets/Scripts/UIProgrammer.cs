@@ -3,6 +3,7 @@ using Ubisoft.UIProgrammerTest.Models;
 using Ubisoft.UIProgrammerTest.Models.Shops;
 using Ubisoft.UIProgrammerTest.ViewModels;
 using UnityMVVM.Util;
+using Ubisoft.UIProgrammerTest.Models.Shops.Builders;
 
 namespace Ubisoft.UIProgrammerTest
 {
@@ -11,7 +12,7 @@ namespace Ubisoft.UIProgrammerTest
         private void Awake()
         {
             UserProfile userProfile = new UserProfile();
-            Shop shop = new Shop();
+            Shop shop = new ShopBuilder().Build();
 
             MainStoreViewModel mainStoreViewModel = ViewModelProvider.Instance.GetViewModelInstance<MainStoreViewModel>();
             mainStoreViewModel.SetData(userProfile, shop);

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Ubisoft.UIProgrammerTest.Models.Shops.Builders;
 using UnityEngine;
 
 namespace Ubisoft.UIProgrammerTest.Models.Shops
@@ -18,39 +19,25 @@ namespace Ubisoft.UIProgrammerTest.Models.Shops
             get { return m_activePacks; }
         }
 
-		public Shop()
+        public List<ShopPack> activePacksGems
         {
-			TextAsset txt = Resources.Load<TextAsset>("Data/shop_manager");
+            get { return m_activePacks.FindAll(item => item.data.type == ShopType.Gems); }
+        }
 
-			// Parse json data
-			SimpleJSON.JSONNode data = SimpleJSON.JSONNode.Parse(txt.text);
+        public List<ShopPack> activePacksCoins
+        {
+            get { return m_activePacks.FindAll(item => item.data.type == ShopType.Coins); }
+        }
 
-			// Load all packs data
-			Clear();
-			if (data.HasKey("packs"))
-			{
-				SimpleJSON.JSONArray packsData = data["packs"].AsArray;
-				for (int i = 0; i < packsData.Count; ++i)
-				{
-					// Create pack data
-					ShopPackData packData = new ShopPackDataBuilder(packsData[i]).Build();
+        public Shop(List<ShopPackData> m_shopPackDatas)
+        {
+            Clear();
+            m_offerPacksDatabase.AddRange(m_shopPackDatas.FindAll(shopPackData => shopPackData.type == ShopType.Offer));
+            List<ShopPackData> shopPackDatasWithoutOffer = m_shopPackDatas.FindAll(shopPackData => shopPackData.type != ShopType.Offer);
+            shopPackDatasWithoutOffer.ForEach(shopPackData => CreateAndActivatePack(shopPackData));
+        }
 
-					// Is it an offer pack?
-					if (packData.type != ShopType.Offer)
-					{
-						// No! Activate it directly
-						CreateAndActivatePack(packData);
-					}
-					else
-					{
-						// Yes! Put it in the offers pool and it will be automatically activated when needed
-						m_offerPacksDatabase.Add(packData);
-					}
-				}
-			}
-		}
-
-		private void CreateAndActivatePack(ShopPackData _packData)
+        private void CreateAndActivatePack(ShopPackData _packData)
 		{
 			// Create a new pack with given data
 			ShopPack newPack = new ShopPackBuilder(_packData).Build();
@@ -76,12 +63,79 @@ namespace Ubisoft.UIProgrammerTest.Models.Shops
 
 			// Activate pack!
 			newPack.Activate();
-
-			// Notify listeners
-			//OnPackActivated.Invoke(newPack);
 		}
 
-		public  void Clear()
+        public void Refresh()
+        {
+            RemoveExpiredPacks();
+
+            // Do we need to activate a new offer pack?
+            int loopCount = 50; // Just in case, prevent infinite loop
+            while (m_activeOfferPacks.Count < ActiveOfferPacks && loopCount > 0)
+            {
+                // Decrease loop counter
+                loopCount--;
+
+                // Create a pool of selectable packs
+                List<ShopPackData> pool = new List<ShopPackData>();
+                for (int i = 0; i < m_offerPacksDatabase.Count; ++i)
+                {
+                    // Don't use this pack if it has been used recently
+                    if (m_offerPacksHistory.Contains(m_offerPacksDatabase[i].id))
+                        continue;
+
+                    // All checks passed! Add pack to the pool
+                    pool.Add(m_offerPacksDatabase[i]);
+                }
+
+                // Do we have any valid candidates?
+                if (pool.Count > 0)
+                {
+                    // Yes!! Pick a random pack from the pool and activate it!
+                    ShopPackData newPackData = pool[Random.Range(0, pool.Count)];
+                    CreateAndActivatePack(newPackData);
+                }
+                else
+                {
+                    // No!! (shouldn't happen) Remove last entry from the history and skip to next loop
+                    m_offerPacksHistory.Dequeue();
+                    continue;
+                }
+            }
+        }
+
+        private void RemoveExpiredPacks()
+        {
+            // Aux vars
+            List<ShopPack> toRemove = new List<ShopPack>();
+
+            // Loop through all active packs and check those that need to be expired
+            for (int i = 0; i < m_activePacks.Count; ++i)
+            {
+                // Needs to be expired?
+                m_activePacks[i].CheckExpiration();
+                if (m_activePacks[i].IsExpired())
+                {
+                    toRemove.Add(m_activePacks[i]);
+                }
+            }
+
+            // Remove all the packs requiring so
+            for (int i = 0; i < toRemove.Count; ++i)
+            {
+                RemovePack(toRemove[i]);
+            }
+        }
+
+        private void RemovePack(ShopPack pack)
+        {
+            // Remove it for collections
+            m_activePacks.Remove(pack);
+            m_activeOfferPacks.Remove(pack);
+        }
+
+
+        public void Clear()
         {
             m_offerPacksDatabase.Clear();
             m_activeOfferPacks.Clear();

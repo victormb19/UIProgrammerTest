@@ -3,8 +3,32 @@
     public class Currency
     {
         private CurrencyType m_currencyType;
-        private CurrencyUnit m_currencyUnits;
-        private int m_amount;
+        private float m_amount;
 
+        public Currency(CurrencyType currencyType, float amount)
+        {
+            m_currencyType = currencyType;
+            m_amount = amount;
+        }
+
+        public CurrencyType currencyType
+        {
+            get { return m_currencyType; }
+        }
+
+        public float amount
+        {
+            get { return m_amount; }
+        }
+
+        public bool IsGreaterOrEquealsThan(Currency currency)
+        {
+            return m_amount >= currency.m_amount;
+        }
+
+        public void ProcessTransaction(Currency currency)
+        {
+            m_amount += currency.m_amount;
+        }
     }
 }

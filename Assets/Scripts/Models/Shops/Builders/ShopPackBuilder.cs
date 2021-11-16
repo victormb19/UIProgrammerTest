@@ -1,6 +1,4 @@
-﻿using Ubisoft.UIProgrammerTest.Models.Currencies;
-
-namespace Ubisoft.UIProgrammerTest.Models.Shops
+﻿namespace Ubisoft.UIProgrammerTest.Models.Shops.Builders
 {
     public class ShopPackBuilder
     {

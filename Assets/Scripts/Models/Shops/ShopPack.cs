@@ -48,11 +48,17 @@ namespace Ubisoft.UIProgrammerTest.Models.Shops
 				return;
 
 			// If pack is timed and expiration date has passed, mark it as expired
-			if (m_data.isTimed && remainingTime.TotalSeconds < 0)
+			if (IsExpired())
 			{
 				m_state = ShopPackState.Expired;
 			}
 		}
+
+		public bool IsExpired()
+		{
+			return m_data.isTimed && remainingTime.TotalSeconds < 0;
+		}
+
 
 		/// <summary>
 		/// Apply this pack's rewards to the current User Profile.
@@ -63,7 +69,7 @@ namespace Ubisoft.UIProgrammerTest.Models.Shops
 			// Apply rewards!
 			for (int i = 0; i < m_data.items.Length; ++i)
 			{
-				//m_data.items[i].Apply();
+			//	m_data.items[i].Apply();
 			}
 
 			// If offer pack, mark it as expired so the pack is removed from the manager
@@ -98,5 +104,7 @@ namespace Ubisoft.UIProgrammerTest.Models.Shops
 
 			return str;
 		}
-	}
+
+
+    }
 }

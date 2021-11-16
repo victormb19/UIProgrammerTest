@@ -1,4 +1,5 @@
 ﻿
+using Ubisoft.UIProgrammerTest.Models.Errors;
 using Ubisoft.UIProgrammerTest.Models.Transactions;
 
 namespace Ubisoft.UIProgrammerTest.ViewModels.Commands
@@ -34,11 +35,11 @@ namespace Ubisoft.UIProgrammerTest.ViewModels.Commands
         public void ConfirmReward()
         {
             m_loadingViewModel.Deactive();
-
         }
 
-        public void Error()
+        public void Error(ErrorReport errorReport)
         {
+            m_errorViewModel.errorMessage = errorReport.errorMessage;
             m_errorViewModel.Active();
         }
     }

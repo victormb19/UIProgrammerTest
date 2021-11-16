@@ -78,19 +78,18 @@ namespace Ubisoft.UIProgrammerTest.ViewModels
         {
             m_userProfile = userProfile;
             m_shop = shop;
-            Initialize();
         }
 
-        private void Initialize()
-        {
-            offerValue = 80;
-            timeExpire = new TimeSpan(5, 10, 2, 10);
-            price = 2999;
-            priceOffer = 599;
-            MegaPackItems.Add(new PackItem() { itemImage = "icon_character_2", itemName = "Hodur" });
-            MegaPackItems.Add(new PackItem() { itemImage = "icon_pack_gems_1", itemName = "400 Gems" });
-            MegaPackItems.Add(new PackItem() { itemImage = "icon_pack_coins_2", itemName = "3500 Coins" });
-        }
+        //private void Initialize()
+        //{
+        //    offerValue = 80;
+        //    timeExpire = new TimeSpan(5, 10, 2, 10);
+        //    price = 2999;
+        //    priceOffer = 599;
+        //    MegaPackItems.Add(new PackItem() { itemImage = "icon_character_2", itemName = "Hodur" });
+        //    MegaPackItems.Add(new PackItem() { itemImage = "icon_pack_gems_1", itemName = "400 Gems" });
+        //    MegaPackItems.Add(new PackItem() { itemImage = "icon_pack_coins_2", itemName = "3500 Coins" });
+        //}
 
         public void InitTransaction()
         {

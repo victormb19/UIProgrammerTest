@@ -5,6 +5,7 @@ namespace Ubisoft.UIProgrammerTest.ViewModels
     public class ErrorViewModel : ViewModelBase
     {
         private bool m_isVisible;
+        private string m_errorMessage;
 
         public bool isVisible
         {
@@ -18,6 +19,20 @@ namespace Ubisoft.UIProgrammerTest.ViewModels
                 }
             }
         }
+
+        public string errorMessage
+        {
+            get { return m_errorMessage; }
+            set
+            {
+                if (value != m_errorMessage)
+                {
+                    m_errorMessage = value;
+                    NotifyPropertyChanged(nameof(errorMessage));
+                }
+            }
+        }
+
         public void Active()
         {
             isVisible = true;
