@@ -1,9 +1,11 @@
+using System;
 using Ubisoft.UIProgrammerTest.Models;
+using Ubisoft.UIProgrammerTest.Models.Currencies;
 using UnityMVVM.ViewModel;
 
 namespace Ubisoft.UIProgrammerTest.ViewModels
 {
-    public class CurenciesViewModel : ViewModelBase
+    public class CurrenciesViewModel : ViewModelBase
     {
         private UserProfile m_userProfile;
 
@@ -39,6 +41,13 @@ namespace Ubisoft.UIProgrammerTest.ViewModels
         public void SetData(UserProfile userProfile)
         {
             m_userProfile = userProfile;
+            RefreshCurrencies();
+        }
+
+        public void RefreshCurrencies()
+        {
+            coins = Convert.ToInt32(m_userProfile.GetCurrency(CurrencyType.Coins).amount);
+            gems = Convert.ToInt32(m_userProfile.GetCurrency(CurrencyType.Gems).amount);
         }
     }
 }

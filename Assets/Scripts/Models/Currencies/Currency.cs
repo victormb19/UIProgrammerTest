@@ -26,9 +26,14 @@
             return m_amount >= currency.m_amount;
         }
 
-        public void ProcessTransaction(Currency currency)
+        public void AddCurrency(Currency currency)
         {
             m_amount += currency.m_amount;
+        }
+
+        public void SubstractCurrency(Currency currency)
+        {
+            m_amount -= currency.m_amount;
         }
     }
 }

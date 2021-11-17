@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Ubisoft.UIProgrammerTest.Models.Currencies;
-using Ubisoft.UIProgrammerTest.Models.Shops;
 
 namespace Ubisoft.UIProgrammerTest.Models
 {
@@ -21,16 +20,23 @@ namespace Ubisoft.UIProgrammerTest.Models
             return m_currencies.Find(currency => currency.currencyType == currencyType);
         } 
 
-        public bool HasEnoughCurrency(PackItem packItem)
+        public bool HasEnoughCurrency(Currency currencyPack)
         {
-            Currency currency = GetCurrency(packItem.currency.currencyType);
-            return currency.IsGreaterOrEquealsThan(currency);
+            Currency currency = GetCurrency(currencyPack.currencyType);
+            return currency.IsGreaterOrEquealsThan(currencyPack);
         }
 
-        public void ApplyTransaction(PackItem packItem)
+        public void AddCurrency(Currency currencyPack)
         {
-            Currency currency = GetCurrency(packItem.currency.currencyType);
-            currency.ProcessTransaction(packItem.currency);
+            Currency currency = GetCurrency(currencyPack.currencyType);
+            currency.AddCurrency(currencyPack);
         }
+
+        public void SubsctractCurrency(Currency currencyPack)
+        {
+            Currency currency = GetCurrency(currencyPack.currencyType);
+            currency.SubstractCurrency(currencyPack);
+        }
+
     }
 }

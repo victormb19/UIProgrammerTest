@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Ubisoft.UIProgrammerTest.Models.Shops.Builders;
 using UnityEngine;
 
@@ -14,9 +15,9 @@ namespace Ubisoft.UIProgrammerTest.Models.Shops
 		private const int ActiveOfferPacks = 3;
 		private const int OffersHistoryMaxSize = ActiveOfferPacks + 1;
 
-		public List<ShopPack> activePacks
+        public List<ShopPack> activeOfferPacks
         {
-            get { return m_activePacks; }
+            get { return m_activeOfferPacks.OrderByDescending(item => item.data.discount).ToList(); }
         }
 
         public List<ShopPack> activePacksGems
@@ -133,7 +134,6 @@ namespace Ubisoft.UIProgrammerTest.Models.Shops
             m_activePacks.Remove(pack);
             m_activeOfferPacks.Remove(pack);
         }
-
 
         public void Clear()
         {

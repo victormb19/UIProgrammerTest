@@ -9,9 +9,8 @@ using UnityMVVM.ViewModel;
 
 namespace Ubisoft.UIProgrammerTest.ViewModels
 {
-    public class MegaPackViewModel: ViewModelBase
+    public class StarterPackViewModel : ViewModelBase
     {
-
         private UserProfile m_userProfile;
         private Pack m_pack;
 
@@ -110,7 +109,7 @@ namespace Ubisoft.UIProgrammerTest.ViewModels
         {
             TransactionPack transactionPack = new TransactionPack(m_pack.id, ShopType.Offer, m_pack.priceOffer, m_pack.packItems);
             InitTransationCommand initTransationCommand = new InitTransationCommand(
-                 new Transaction(m_userProfile, transactionPack));
+                new Transaction(m_userProfile, transactionPack));
             initTransationCommand.Execute();
         }
     }

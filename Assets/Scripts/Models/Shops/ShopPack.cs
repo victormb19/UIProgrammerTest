@@ -59,52 +59,5 @@ namespace Ubisoft.UIProgrammerTest.Models.Shops
 			return m_data.isTimed && remainingTime.TotalSeconds < 0;
 		}
 
-
-		/// <summary>
-		/// Apply this pack's rewards to the current User Profile.
-		/// Won't do any checks!
-		/// </summary>
-		public void Apply()
-		{
-			// Apply rewards!
-			for (int i = 0; i < m_data.items.Length; ++i)
-			{
-			//	m_data.items[i].Apply();
-			}
-
-			// If offer pack, mark it as expired so the pack is removed from the manager
-			if (m_data.type == ShopType.Offer)
-			{
-				m_state = ShopPackState.Expired;
-			}
-		}
-
-		/// <summary>
-		/// String representation of this pack.
-		/// </summary>
-		public override string ToString()
-		{
-			// Pack Type + ID
-			string str = data.type + " " + data.id;
-
-			// Price
-			str += " [" + data.price + " " + data.currency + "]";
-
-			// Remaining time
-			if (data.isTimed && state == ShopPackState.Active)
-			{
-				str += "\n" + remainingTime.ToString();
-			}
-
-			// Items
-			for (int i = 0; i < data.items.Length; ++i)
-			{
-				str += "\n\t" + data.items[i].ToString();
-			}
-
-			return str;
-		}
-
-
     }
 }

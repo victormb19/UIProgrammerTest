@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6254f6ce704a4a448c7af06a9bf9d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ViewModelName: Ubisoft.UIProgrammerTest.ViewModels.CurenciesViewModel
+  ViewModelName: Ubisoft.UIProgrammerTest.ViewModels.CurrenciesViewModel
   BindingMode: 0
   SrcPropertyName: coins
   DstPropertyName: text
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6254f6ce704a4a448c7af06a9bf9d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ViewModelName: Ubisoft.UIProgrammerTest.ViewModels.CurenciesViewModel
+  ViewModelName: Ubisoft.UIProgrammerTest.ViewModels.CurrenciesViewModel
   BindingMode: 0
   SrcPropertyName: gems
   DstPropertyName: text

@@ -1,4 +1,5 @@
-﻿using Ubisoft.UIProgrammerTest.Models.Currencies;
+﻿using System;
+using Ubisoft.UIProgrammerTest.Models.Currencies;
 
 namespace Ubisoft.UIProgrammerTest.Models.Shops
 {
@@ -11,7 +12,6 @@ namespace Ubisoft.UIProgrammerTest.Models.Shops
 		private string m_tidName = "";    // Text ID of the pack name
 		protected bool m_featured = false;  // Put in the featured spot?
 		protected float m_price = 0;
-
 		protected CurrencyType m_currency = CurrencyType.Gems;
 		protected float m_discount = 0f;    // [0..1] Percentage of discount
 		protected ShopItemData[] m_items = null;
@@ -51,7 +51,7 @@ namespace Ubisoft.UIProgrammerTest.Models.Shops
 		public string tidName
 		{
 			get { return m_tidName; }
-			set { m_tidName = tidName; }
+			set { m_tidName = value; }
 		}
 
 		public bool featured

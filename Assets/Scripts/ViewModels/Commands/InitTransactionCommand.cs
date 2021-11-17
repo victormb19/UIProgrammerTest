@@ -15,7 +15,7 @@ namespace Ubisoft.UIProgrammerTest.ViewModels.Commands
 
         public override void Execute()
         {
-            m_confirmViewModel.SetTransaction(m_transaction);
+            m_confirmViewModel.ShowInfo(m_transaction);
             m_confirmViewModel.Active();
         }
     }

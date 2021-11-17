@@ -4,8 +4,8 @@ namespace Ubisoft.UIProgrammerTest.ViewModels
 {
     public class ErrorViewModel : ViewModelBase
     {
-        private bool m_isVisible;
-        private string m_errorMessage;
+        private bool m_isVisible = true;
+        private string m_errorMessage = "";
 
         public bool isVisible
         {
@@ -31,6 +31,11 @@ namespace Ubisoft.UIProgrammerTest.ViewModels
                     NotifyPropertyChanged(nameof(errorMessage));
                 }
             }
+        }
+
+        public void Initialize()
+        {
+            Deactive();
         }
 
         public void Active()

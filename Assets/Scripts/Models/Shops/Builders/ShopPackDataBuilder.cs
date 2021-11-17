@@ -9,7 +9,7 @@ namespace Ubisoft.UIProgrammerTest.Models.Shops.Builders
 		private const string TypeKey = "type";
 		private const string OrderKey = "order";
 		private const string DurationKey = "duration";
-		private const string TidNameKey = "duration";
+		private const string TidNameKey = "tidName";
 		private const string FeaturedKey = "featured";
 		private const string PriceKey = "price";
 		private const string CurrencyKey = "currency";

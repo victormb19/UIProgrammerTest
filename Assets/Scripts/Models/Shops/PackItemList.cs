@@ -1,4 +1,5 @@
-﻿using UnityMVVM.View;
+﻿using UnityEngine;
+using UnityMVVM.View;
 
 namespace Ubisoft.UIProgrammerTest.Models.Shops
 {

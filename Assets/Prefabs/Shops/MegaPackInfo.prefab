@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3962953735160139702}
   - component: {fileID: 4613958364185604365}
   - component: {fileID: 6341277782128953081}
-  - component: {fileID: 1497804249651814116}
+  - component: {fileID: 5060422047251503269}
   m_Layer: 5
   m_Name: BannerText
   m_TagString: Untagged
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 90
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 90
@@ -100,9 +100,9 @@ MonoBehaviour:
   SrcPropertyPath: 
   DstPropertyPath: 
   DstView: {fileID: 4613958364185604365}
-  Converter: {fileID: 1497804249651814116}
+  Converter: {fileID: 5060422047251503269}
   DstChangedEventName: onCullStateChanged
---- !u!114 &1497804249651814116
+--- !u!114 &5060422047251503269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 904353554261346648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1a68451e6c0eec4e890c5f4abaccc5e, type: 3}
+  m_Script: {fileID: 11500000, guid: fb8277159bd6c204896340be2c3a2118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1921184380492684793
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 6315754250545598301}
   - component: {fileID: 6247121182893074389}
   m_Layer: 5
-  m_Name: PackInfoVertical
+  m_Name: MegaPackInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -593,6 +593,18 @@ MonoBehaviour:
   _listItemPrefab: {fileID: 5940652740324934207, guid: 81851efc09745c94587ba80bfc1ad2cb, type: 3}
   _src: {fileID: 5926630907469692365}
   CanSelectMultiple: 0
+--- !u!114 &2420300246893638638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7136615676423642877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e64cd3a47a62fa4f8a0bd29e8f6589e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3345618214511009258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,21 +624,9 @@ MonoBehaviour:
   SrcPropertyPath: 
   DstPropertyPath: 
   DstView: {fileID: 832945121967844556}
-  Converter: {fileID: 8640450554358381493}
+  Converter: {fileID: 2420300246893638638}
   DstChangedEventName: onCullStateChanged
---- !u!114 &8640450554358381493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7136615676423642877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1a68451e6c0eec4e890c5f4abaccc5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3794080996777964686
+--- !u!114 &4609894318178754673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -635,7 +635,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7442789064375864958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1a68451e6c0eec4e890c5f4abaccc5e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e64cd3a47a62fa4f8a0bd29e8f6589e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &5146653362300407583
@@ -657,7 +657,7 @@ MonoBehaviour:
   SrcPropertyPath: 
   DstPropertyPath: 
   DstView: {fileID: 7158238630033363942}
-  Converter: {fileID: 3794080996777964686}
+  Converter: {fileID: 4609894318178754673}
   DstChangedEventName: onCullStateChanged
 --- !u!1001 &606361167536246452
 PrefabInstance:

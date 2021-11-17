@@ -20,9 +20,10 @@ namespace Ubisoft.UIProgrammerTest.Models.Purchases
                                  {
                                     // Success!
                                     bool success = Random.Range(0f, 1f) > IAPFailChance;    // X% chance of success
-                                     if (!success)
+                                    if (!success)
                                          m_transaction.TransactionError( new ErrorReportBuilder().Build(ErrorType.StoreFailed));
-                                    m_transaction.FinishTransaction();
+                                    else
+                                        m_transaction.FinishTransaction();
                                  }, Random.Range(IAPMinDuration, IAPMaxDuration)
                              );
         }

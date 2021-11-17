@@ -10,9 +10,9 @@ namespace Ubisoft.UIProgrammerTest.Models.Errors
         {
             m_errorMessages = new Dictionary<ErrorType, string>()
                          {
-                             {ErrorType.NotEnoughCurrency, "" },
-                             {ErrorType.StoreFailed, "" },
-                             {ErrorType.Unknown, ""}
+                             {ErrorType.NotEnoughCurrency, "Not Enough currency!" /*LocalizationManager.instance.Localize("")*/ },
+                             {ErrorType.StoreFailed,"Store Failed!" /*LocalizationManager.instance.Localize("")*/ },
+                             {ErrorType.Unknown, LocalizationManager.instance.Localize("TID_ERROR_GENERIC")}
                          };
         }
 
